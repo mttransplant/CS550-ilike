@@ -14,6 +14,7 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
+  gem 'guard'
 end
 
 group :test do
