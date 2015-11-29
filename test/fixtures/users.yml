@@ -1,5 +1,11 @@
 ana:
   first_name: Ana
   last_name: Cunha
-  email: ana@css.neu.edu
+  email: ana@ccs.neu.edu
+  password_digest: <%= User.digest('password') %>
+  
+shiva:
+  first_name: Shiva
+  last_name: Chaturvedi
+  email: shivac@ccs.neu.edu
   password_digest: <%= User.digest('password') %>
