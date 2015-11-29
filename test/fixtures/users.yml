@@ -3,6 +3,7 @@ ana:
   last_name: Cunha
   email: ana@ccs.neu.edu
   password_digest: <%= User.digest('password') %>
+  admin: true
   
 shiva:
   first_name: Shiva
