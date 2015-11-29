@@ -9,3 +9,23 @@ shiva:
   last_name: Chaturvedi
   email: shivac@ccs.neu.edu
   password_digest: <%= User.digest('password') %>
+
+adam:
+  first_name: Adam
+  last_name: Smith
+  email: apsmith@ccs.neu.edu
+  password_digest: <%= User.digest('password') %>
+
+niharika:
+  first_name: Niharika
+  last_name: Sharma
+  email: nhrshm10@ccs.neu.edu
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  first_name: <%= "User" %>
+  last_name:  <%= "#{n}" %>
+  email:      <%= "user-#{n}@ilike.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>

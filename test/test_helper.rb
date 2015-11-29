@@ -16,6 +16,11 @@ class ActiveSupport::TestCase
     !session[:user_id].nil?
   end
   
+  # Returns the user's full name
+  def full_name(user)
+    user.first_name + ' ' + user.last_name
+  end
+  
   # Logs in a test user.
   def log_in_as(user, options = {})
     password    = options[:password]    || 'password'
