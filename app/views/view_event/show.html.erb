@@ -1,20 +1,26 @@
 <!-- provide(:title, full_name(@user))  -->
-<!-- consider: provide(:title, @event.title)  -->
-<% provide(:title, "Event ##{@event}") %>
+<!-- consider: provide(:title, @event_id.title)  -->
+<% get_event_data %>
+<% provide(:title, @event_title) %>
 
 <div class="well">
   <div class="row">
-    <div class="title">Event Title for Event #<%= @event %></div>
+    <div class="title"><%= @event_title %></div>
   </div>
   <hr/>
   <div class="row">
     <%= event_image_generated %>
-    <div class="date">Date of event #<%= @event %></div>
-    <div class="time">Time of event #<%= @event %></div>
-    <div class="venue">Venue of event #<%= @event %></div>
-    <div class="address">Street address of event #<%= @event %></div>
-    <div class="address">City, State ZIP of event #<%= @event %></div>
-    <div class="map_link"><%= link_to("Map","https://www.google.com/maps/place/Boston,+MA")%></div>
+    <div class="date"><%= @event_date %></div>
+    <% @event_time = "All Day Event" if @event_all_day > "0" %>
+    <div class="time"><%= @event_time %></div>
+    <div class="venue"><%= @event_venue %></div>
+    <% @event_address = "" if @event_address == nil %>
+    <div class="address"><%= @event_address %></div>
+    <% @event_city = "" if @event_city == nil %>
+    <% @event_state = "" if @event_state == nil %>
+    <% @event_zip = "" if @event_zip == nil %>
+    <div class="address"><%= @event_city + ", " + @event_state + "  " + @event_zip %></div>
+    <div class="map_link"><%= link_to("Map","https://www.google.com/maps/@#{@event_latitude},#{@event_longitude},14z")%></div>
     <div class="social">
       <button type="button" class="btn btn-md btn-primary">Like</button>
       <button type="button" class="btn btn-md btn-primary">Share</button>
@@ -26,7 +32,8 @@
   </div>
   <hr/>
   <div class="row">
-    <p>Description for event #<%= @event %></p>
-    <p>Cost for event #<%= @event %></p>
+    <% @event_description = "There is no description for this event" if @event_description == nil%>
+    <p>Description: <%= @event_description %></p>
+    <p>Cost: <%= @event_cost %></p>
   </div>
 </div>
