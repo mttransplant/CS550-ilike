@@ -1,0 +1,39 @@
+// Place all the styles related to the view_event controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title {
+  align: left;
+  font-size: 2em;
+}
+
+.event_image {
+  size: 200px;
+  padding-right: 20px;
+  float: left;
+}
+
+.date {
+  align: left;
+  font-size: 1.2em;
+}
+
+.time address {
+  align: left;
+  font-size: 1em;
+}
+
+.venue {
+  font-size: 1.2em;
+  color: blue;
+  padding-top: 10px;
+}
+
+.social {
+  padding-top: 10px;
+}
+
+.map_link {
+  font-size: 1em;
+  color: blue;
+}

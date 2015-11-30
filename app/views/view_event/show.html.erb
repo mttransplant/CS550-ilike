@@ -1,0 +1,32 @@
+<!-- provide(:title, full_name(@user))  -->
+<!-- consider: provide(:title, @event.title)  -->
+<% provide(:title, "Event ##{@event}") %>
+
+<div class="well">
+  <div class="row">
+    <div class="title">Event Title for Event #<%= @event %></div>
+  </div>
+  <hr/>
+  <div class="row">
+    <%= event_image_generated %>
+    <div class="date">Date of event #<%= @event %></div>
+    <div class="time">Time of event #<%= @event %></div>
+    <div class="venue">Venue of event #<%= @event %></div>
+    <div class="address">Street address of event #<%= @event %></div>
+    <div class="address">City, State ZIP of event #<%= @event %></div>
+    <div class="map_link"><%= link_to("Map","https://www.google.com/maps/place/Boston,+MA")%></div>
+    <div class="social">
+      <button type="button" class="btn btn-md btn-primary">Like</button>
+      <button type="button" class="btn btn-md btn-primary">Share</button>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="title">Event Details</div>
+  </div>
+  <hr/>
+  <div class="row">
+    <p>Description for event #<%= @event %></p>
+    <p>Cost for event #<%= @event %></p>
+  </div>
+</div>
