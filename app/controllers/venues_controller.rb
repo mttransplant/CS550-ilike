@@ -7,7 +7,7 @@ class VenuesController < ApplicationController
   
   def index
     @location = Location.find(1)
-    @venues = @eventful.call 'venues/search', :location => @location.name, :page_size => 50
+    @venues = @eventful.call 'venues/search', :location => @location.name, :page_size => 50, :sort_order => 'popularity'
   end
   
   def show
