@@ -22,6 +22,7 @@ class ViewEventController < ApplicationController
       @event_date = Date.parse(obj['start_time']).strftime('%b. %-d, %Y')
       @event_time = DateTime.parse(obj['start_time']).strftime('%l:%M %P')
       @event_venue = obj['venue_name']
+      @event_venue_id = obj['venue_id']
       @event_address = obj['address']
       @event_city = obj['city']
       @event_state = obj['region_abbr']

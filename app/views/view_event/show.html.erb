@@ -12,7 +12,7 @@
     <%= event_image_generated %>
     <div class="date"><%= @event_date %></div>
     <div class="time"><%= @event_time %></div>
-    <div class="venue"><%= @event_venue %></div>
+    <div class="venue"><%= link_to @event_venue, "/venues/" + @event_venue_id %></div>
     <div class="address"><%= @event_address %></div>
     <div class="address"><%= @event_city + ", " + @event_state + "  " + @event_zip %></div>
     <div class="map_link"><%= link_to("Map","https://www.google.com/maps/@#{@event_latitude},#{@event_longitude},14z")%></div>
