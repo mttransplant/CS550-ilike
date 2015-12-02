@@ -3,7 +3,7 @@
 
 <ul>
 <% @venues['venues']['venue'].each do |venue| %>
-  <li><%= link_to venue['name'], 'venues/' + venue['id'] %></li>
+  <li><%= link_to venue['name'], venue_path(venue['id']) %></li>
 <% end %>
 </ul>
   
