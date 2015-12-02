@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   post    'login'   => 'sessions#create'
   delete  'logout'  => 'sessions#destroy'
   
-  resources :users
   get '/view_event', to: 'view_event#index'
   get '/view_event/:id', to: 'view_event#show', as: 'event'
+  
+  resources :users
+  resources :venues
   
 end
