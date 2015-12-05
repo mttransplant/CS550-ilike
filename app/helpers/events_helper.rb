@@ -1,4 +1,4 @@
-module ViewEventHelper
+module EventsHelper
   require 'open-uri'
   
   def event_image_generated

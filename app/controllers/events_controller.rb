@@ -1,15 +1,15 @@
-class ViewEventController < ApplicationController
+class EventsController < ApplicationController
 
   def index
   end
   
   def show
-    @event_id = params[:id] #this is temporary until the data model is set
+    @event_id = params[:id] 
     get_event_data
     if @event_found
       clean_event_data
     else
-      redirect_to view_event_path unless @event_found
+      redirect_to events_path unless @event_found
     end
   end
 
