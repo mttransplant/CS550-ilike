@@ -44,4 +44,17 @@ class EventsController < ApplicationController
     @event_zip = "" if @event_zip == nil
     @event_description = "There is no description for this event" if @event_description == nil
   end
+  
+  def like_event
+    current_user = User.find(session[:user_id])
+    # @this_event = params[:id]
+    LikedEvent.create(user: current_user, event: params[:id])
+    redirect_to {event_url + params[:id]}
+  end
+  
+  def remove_event_like
+    current_user = User.find(session[:user_id])
+    LikedEvent.where(user: current_user.id, event: @event_id).destroy_all
+  end    
+  
 end

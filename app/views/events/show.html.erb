@@ -17,8 +17,14 @@
     <div class="address"><%= @event_city + ", " + @event_state + "  " + @event_zip %></div>
     <div class="map_link"><%= link_to("Map","https://www.google.com/maps/@#{@event_latitude},#{@event_longitude},14z")%></div>
     <div class="social">
-      <button type="button" class="btn btn-md btn-primary">Like</button>
-      <button type="button" class="btn btn-md btn-primary">Dislike</button>
+      <% current_user = User.find(session[:user_id]) %>
+      
+      <% if event_is_liked(current_user, @event_id) then %>
+        <%= button_to("Remove Like", :action => "remove_event_like", :controller => "events", :class => "btn btn-md btn-primary active") %>
+      <% else %>
+        <%= button_to("Like", :controller => "events", :action => "like_event", :class => "btn btn-md btn-primary disabled") %>
+      <% end %>
+      <button type="button" class="btn btn-md btn-primary disabled">Dislike</button>
     </div>
   </div>
   <hr/>
@@ -31,3 +37,4 @@
     <p>Cost: <%= @event_cost %></p>
   </div>
 </div>
+
