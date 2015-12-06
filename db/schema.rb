@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202200824) do
+ActiveRecord::Schema.define(version: 20151206010300) do
+
+  create_table "eventgroups", force: :cascade do |t|
+    t.string  "category"
+    t.boolean "favorite"
+    t.integer "user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "event_id"
+    t.string  "url"
+    t.string  "title"
+    t.string  "description"
+    t.string  "venuename"
+    t.string  "venue_id"
+    t.string  "venue_type"
+    t.string  "venue_add"
+    t.string  "city"
+    t.boolean "favorite"
+    t.integer "rating"
+  end
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
