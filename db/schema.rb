@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206010300) do
+ActiveRecord::Schema.define(version: 20151206223018) do
 
-  create_table "eventgroups", force: :cascade do |t|
-    t.string  "category"
-    t.boolean "favorite"
-    t.integer "user_id"
+  create_table "categories", force: :cascade do |t|
+    t.text "name"
   end
+
+  add_index "categories", ["id"], name: "sqlite_autoindex_categories_1", unique: true
 
   create_table "events", force: :cascade do |t|
     t.integer "user_id"
