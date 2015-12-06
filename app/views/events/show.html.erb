@@ -1,25 +1,17 @@
-<!-- provide(:title, full_name(@user))  -->
-<!-- consider: provide(:title, @event_id.title)  -->
-
-<% provide(:title, @event_title) %>
+<% provide(:title, @event['title']) %>
 
 <div class="well">
   <div class="row">
-    <div class="title"><%= @event_title %></div>
+    <div class="title"><%= @event['title'] %></div>
   </div>
   <hr/>
   <div class="row">
     <%= event_image_generated %>
     <div class="date"><%= @event_date %></div>
     <div class="time"><%= @event_time %></div>
-    <div class="venue"><%= link_to @event_venue, "/venues/" + @event_venue_id %></div>
-    <div class="address"><%= @event_address %></div>
-    <div class="address"><%= @event_city + ", " + @event_state + "  " + @event_zip %></div>
-    <div class="map_link"><%= link_to("Map","https://www.google.com/maps/@#{@event_latitude},#{@event_longitude},14z")%></div>
-    <div class="social">
-      <button type="button" class="btn btn-md btn-primary">Like</button>
-      <button type="button" class="btn btn-md btn-primary">Dislike</button>
-    </div>
+    <div class="venue"><%= link_to @event['venue_name'], "/venues/" + @event['venue_id'] %></div>
+    <div class="address"><%= @event['address'] %></div>
+    <div class="address"><%= @event['city'] + ", " + @event['region_abbr'] + "  " + @event['postal_code'].to_s %></div>
   </div>
   <hr/>
   <div class="row">
@@ -28,6 +20,6 @@
   <hr/>
   <div class="row">
     <p>Description: <%= @event_description %></p>
-    <p>Cost: <%= @event_cost %></p>
+    <p>Price: <%= @event['price'] %></p>
   </div>
 </div>
