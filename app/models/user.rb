@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   
-  has_many :eventgroups
+  has_many :user_preferences
   has_many :events
   attr_accessor :remember_token
   
