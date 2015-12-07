@@ -42,89 +42,89 @@ end
 
 # Categories
 
-Category.create!( id:   "music",
+Category.create!( category_id:   "music",
                   name: "Concerts & Tour Dates")
 
-Category.create!( id:   "conference",
+Category.create!( category_id:   "conference",
                   name: "Conferences & Tradeshows")
                   
-Category.create!( id:   "comedy",
+Category.create!( category_id:   "comedy",
                   name: "Comedy")
                   
-Category.create!( id:   "learning_education",
+Category.create!( category_id:   "learning_education",
                   name: "Education")
                   
-Category.create!( id:   "family_fun_kids",
-                  name: "Kids & Family")
+Category.create!( category_id:   "family_fun_kcategory_ids",
+                  name: "Kcategory_ids & Family")
 
-Category.create!( id:   "festivals_parades",
+Category.create!( category_id:   "festivals_parades",
                   name: "Festivals")
                   
-Category.create!( id:   "movies_film",
+Category.create!( category_id:   "movies_film",
                   name: "Film")
                   
-Category.create!( id:   "food",
+Category.create!( category_id:   "food",
                   name: "Food & Wine")
                   
-Category.create!( id:   "fundraisers",
+Category.create!( category_id:   "fundraisers",
                   name: "Fundraising & Charity")
 
-Category.create!( id:   "art",
+Category.create!( category_id:   "art",
                   name: "Art Galleries & Exhibits")
                   
-Category.create!( id:   "support",
+Category.create!( category_id:   "support",
                   name: "Health & Wellness")
                   
-Category.create!( id:   "holiday",
-                  name: "Holiday")
+Category.create!( category_id:   "holcategory_iday",
+                  name: "Holcategory_iday")
                   
-Category.create!( id:   "books",
+Category.create!( category_id:   "books",
                   name: "Literary & Books")
 
-Category.create!( id:   "attractions",
+Category.create!( category_id:   "attractions",
                   name: "Museums & Attractions")
                   
-Category.create!( id:   "community",
+Category.create!( category_id:   "community",
                   name: "Neighborhood")
                   
-Category.create!( id:   "business",
+Category.create!( category_id:   "business",
                   name: "Business & Networking")
                   
-Category.create!( id:   "singles_social",
+Category.create!( category_id:   "singles_social",
                   name: "Nightlife & Singles")
 
-Category.create!( id:   "schools_alumni",
+Category.create!( category_id:   "schools_alumni",
                   name: "University & Alumni")
                   
-Category.create!( id:   "clubs_associations",
+Category.create!( category_id:   "clubs_associations",
                   name: "Organizations & Meetups")
                   
-Category.create!( id:   "outdoors_recreation",
+Category.create!( category_id:   "outdoors_recreation",
                   name: "Outdoors & Recreation")
                   
-Category.create!( id:   "performing_arts",
+Category.create!( category_id:   "performing_arts",
                   name: "Performing Arts")
 
-Category.create!( id:   "animals",
+Category.create!( category_id:   "animals",
                   name: "Pets")
                   
-Category.create!( id:   "politics_activism",
+Category.create!( category_id:   "politics_activism",
                   name: "Politics & Activism")
                   
-Category.create!( id:   "sales",
+Category.create!( category_id:   "sales",
                   name: "Sales & Retail")
                   
-Category.create!( id:   "science",
+Category.create!( category_id:   "science",
                   name: "Science")
 
-Category.create!( id:   "religion_spirituality",
+Category.create!( category_id:   "religion_spirituality",
                   name: "Religion & Spirituality")
                   
-Category.create!( id:   "sports",
+Category.create!( category_id:   "sports",
                   name: "Sports")
                   
-Category.create!( id:   "technology",
+Category.create!( category_id:   "technology",
                   name: "Technology")
                   
-Category.create!( id:   "other",
+Category.create!( category_id:   "other",
                   name: "Other & Miscellaneous")

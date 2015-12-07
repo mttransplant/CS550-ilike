@@ -14,10 +14,11 @@
 ActiveRecord::Schema.define(version: 20151206234140) do
 
   create_table "categories", force: :cascade do |t|
-    t.text "name"
+    t.string   "category_id", null: false
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
-
-  add_index "categories", ["id"], name: "sqlite_autoindex_categories_1", unique: true
 
   create_table "events", force: :cascade do |t|
     t.integer "user_id"
@@ -44,11 +45,14 @@ ActiveRecord::Schema.define(version: 20151206234140) do
 
   create_table "user_preferences", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "category_id"
+    t.integer  "category_id"
     t.boolean  "likes"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "user_preferences", ["category_id"], name: "index_user_preferences_on_category_id"
+  add_index "user_preferences", ["user_id"], name: "index_user_preferences_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

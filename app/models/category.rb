@@ -1,3 +1,4 @@
 class Category < ActiveRecord::Base
-  self.primary_key = 'id'
+  has_many :user_preferences
+  has_many :users, through: :user_preferences
 end
