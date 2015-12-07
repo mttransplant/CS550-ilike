@@ -19,7 +19,7 @@
   </div>
   <hr/>
   <div class="row">
-    <p>Description: <%= @event_description %></p>
+    <p>Description: <%= @event_description.html_safe %></p>
     <p>Price: <%= @event['price'] %></p>
   </div>
 </div>
