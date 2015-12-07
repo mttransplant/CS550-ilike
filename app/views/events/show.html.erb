@@ -6,7 +6,9 @@
   </div>
   <hr/>
   <div class="row">
-    <%= event_image_generated %>
+
+    <%= image_tag(@event['images']['image'].first['medium']['url'], size: "200x200", alt: "Event #{@event_id}", class: "event_image") %>
+
     <div class="date"><%= @event_date %></div>
     <div class="time"><%= @event_time %></div>
     <div class="venue"><%= link_to @event['venue_name'], "/venues/" + @event['venue_id'] %></div>
