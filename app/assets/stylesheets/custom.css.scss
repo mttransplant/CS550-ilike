@@ -215,3 +215,26 @@ input {
   margin-top: 45px;
   @include box_sizing;
 }
+
+#eventlist{
+  background-color: white;
+  height: 500px;
+  overflow-y: auto;
+}
+
+#geolocation{
+  background-color: white;
+  height: 500px;
+  
+}
+
+.jumbotron{
+  background-color: white;
+}
+
+#over_map { 
+  position: absolute; 
+  bottom: 10px; 
+  z-index: 99;
+
+}
