@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   
-  has_many :user_preferences
-  has_many :categories, through: :user_preferences
+  has_and_belongs_to_many :categories
   has_many :events
   attr_accessor :remember_token
   

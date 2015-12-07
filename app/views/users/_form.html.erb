@@ -16,5 +16,10 @@
   <%= f.label :password_confirmation, "Confirmation" %>
   <%= f.password_field :password_confirmation, class: 'form-control' %>
   
+  <%= f.label :category_ids, "Specify Your Preferences" %>
+  <%= f.select :category_ids, Category.order(:name).collect { |c| [c.name, c.id] }, 
+                          { :include_hidden => false },
+                          { :multiple => true, :size => 10 } %>
+
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

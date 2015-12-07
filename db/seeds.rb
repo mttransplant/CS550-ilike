@@ -54,8 +54,8 @@ Category.create!( category_id:   "comedy",
 Category.create!( category_id:   "learning_education",
                   name: "Education")
                   
-Category.create!( category_id:   "family_fun_kcategory_ids",
-                  name: "Kcategory_ids & Family")
+Category.create!( category_id:   "family_fun_kids",
+                  name: "Kids & Family")
 
 Category.create!( category_id:   "festivals_parades",
                   name: "Festivals")
@@ -75,8 +75,8 @@ Category.create!( category_id:   "art",
 Category.create!( category_id:   "support",
                   name: "Health & Wellness")
                   
-Category.create!( category_id:   "holcategory_iday",
-                  name: "Holcategory_iday")
+Category.create!( category_id:   "holiday",
+                  name: "Holiday")
                   
 Category.create!( category_id:   "books",
                   name: "Literary & Books")
