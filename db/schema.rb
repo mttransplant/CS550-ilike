@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 20151207023022) do
     t.integer "category_id"
   end
 
+  create_table "eventgroups", force: :cascade do |t|
+    t.string  "category"
+    t.boolean "favorite"
+    t.integer "user_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.integer "user_id"
     t.string  "event_id"

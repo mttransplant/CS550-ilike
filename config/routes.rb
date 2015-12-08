@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
+  # Logged in
+  constraints lambda { |req| !req.session[:user_id].blank? } do
+    root :to => "users#landing", :as => "dashboard"
+  end
+  # Not logged in
   root                 'static_pages#home'
+  
   get     'about'   => 'static_pages#about'
   get     'contact' => 'static_pages#contact'
   get     'signup'  => 'users#new'

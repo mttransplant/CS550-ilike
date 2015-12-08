@@ -14,12 +14,23 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page])
   end
   
+  def landing
+    @user = User.find(session[:user_id])
+    @categories = @user.categories
+  end
+  
   def show
     @user = User.find(params[:id])
+    @categories = @eventful.call 'categories/list'
+  end
+  
+  def fetch_events
+    
   end
   
   def new
     @user = User.new
+    
   end
   
   def create
