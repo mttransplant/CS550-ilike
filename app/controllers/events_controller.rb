@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   def show
     
     @event = @eventful.call 'events/get', :id => params[:id]
-    if @event == "Not found"
+    if @event['string'] == "Not found"
       redirect_to events_path
     else
       clean_event_data
