@@ -143,7 +143,7 @@ function findEvents(lat, lng){
       date: "This Week",
       units: "km",
    };
-   
+   EVDB.API.URL = "https://api.eventful.com/json";
    EVDB.API.call("/events/search", oArgs, displayEvents);
 }
 
@@ -157,21 +157,23 @@ function displayEvents(filtered_events){
       
       var tempEvent = filtered_events.events.event[i];
       var eventTitle = tempEvent.title;
-      var eventLoc = {lat: Number(tempEvent.latitude), lng: Number(tempEvent.longitude)};
+      var eventLoc = new google.maps.LatLng(Number(tempEvent.latitude),Number(tempEvent.longitude));
       
-      var marker = new google.maps.Marker({
-        position: eventLoc,
-        title: eventTitle
-        
-      });
-      
-      var infowindow = new google.maps.InfoWindow({
+      var thisinfowindow = new google.maps.InfoWindow({
         content:eventTitle
         
       });
       
+      var marker = new google.maps.Marker({
+        position: eventLoc,
+        title: eventTitle,
+        infowindow: thisinfowindow
+        
+      });
+      
       google.maps.event.addListener(marker, 'click', function() {
-        infowindow.open(map,marker);
+        
+        this.infowindow.open(map,this);
         
       });
       
