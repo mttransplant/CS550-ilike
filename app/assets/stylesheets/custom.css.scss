@@ -249,3 +249,46 @@ input {
 .event-buttons a {
   margin-left: 1em;
 }
+
+.event-buttons img {
+  display: block !important;
+  margin-right: 1em !important;
+}
+
+/* Event Page */
+#event-title {
+  text-align: center;
+}
+
+.event-info {
+  display: block;
+}
+
+.event_image {
+  border: 1px solid lightgray;
+}
+
+.event-div {
+  border-bottom: 1px solid lightgray;
+  font-size: 1.25em;
+  font-weight:300;
+  margin: 1em 0;
+  padding: 1em 0;
+}
+
+.event-date {
+  font-size: 1.25em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.event-venue {
+  font-size: 1.25em;
+  margin-bottom: 1em;
+}
+
+.event-address {
+  font-size: 1.25em;
+  font-weight: 200;
+  margin-bottom: 1em;
+}

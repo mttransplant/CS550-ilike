@@ -1,39 +1,64 @@
 <% provide(:title, @event['title']) %>
 
 <div class="well">
-  <div class="row">
-    <div class="title"><%= @event['title'] %></div>
+  <div class="row event-div">
+    <h3 id="event-title"><%= @event['title'] %></h3>
   </div>
-  <hr/>
-  <div class="row">
-    <%= event_image_generated %>
-    <div class="date"><%= @event_date %></div>
-    <div class="time"><%= @event_time %></div>
-    <div class="venue"><%= link_to @event['venue_name'], "/venues/" + @event['venue_id'] %></div>
-    <div class="address"><%= @event['address'] %></div>
-    <div class="address"><%= @event['city'] + ", " + @event['region_abbr'] + "  " + @event['postal_code'].to_s %></div>
+  <div class="row event-div">
+    <div class="col-md-1"></div>
+    <div class="col-md-4"><%= event_image_generated %></div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <div class="event-date">
+        <%= @event_date %> | <%= @event_time %>
+      </div>
+      <div class="event-venue">
+        <%= link_to @event['venue_name'], "/venues/" + @event['venue_id'], :target => '_blank' %>
+      </div>
+      <div class="event-address">
+        <%= @event['address'] %><br/>
+        <%= @event['city'] + ", " + @event['region_abbr'] %><br/>
+        <%= @event['postal_code'].to_s %>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
   </div>
-  <hr/>
-  <div class="row">
-    <div class="title">Event Details</div>
+  <div class="row  event-div">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <p><%= @event_description.html_safe %></p>
+    </div>
+    <div class="col-md-1"></div>
   </div>
-  <hr/>
-  <div class="row">
-    <p><strong>Categories:</strong></p>
-    <% category_list = @event['categories']['category'] %>
-    <ul>
-      <% if category_list == nil then %>
-        <li>This event is not categorized</li>
-      <% else %>
-        <% category_list.each do |c| %>
-        <li> <%= c['name'].html_safe %> </li>
+  <div class="row event-div">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <p>
+        <strong>Price:</strong>
+        <% if @event['free'] %>
+          Free
+        <% else %>
+          <%= @event['price'] %>
         <% end %>
-      <% end %>
-    </ul>
+      </p>
+    </div>
+    <div class="col-md-1"></div>
   </div>
-  <hr/>
-  <div class="row">
-    <p><strong>Description:</strong> <%= @event_description.html_safe %></p>
-    <p><strong>Price:</strong> <%= @event['price'] %></p>
+  <div class="row event-div">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <p><strong>Categories:</strong></p>
+      <% category_list = @event['categories']['category'] %>
+      <ul>
+        <% if category_list == nil then %>
+          <li>This event is not categorized</li>
+        <% else %>
+          <% category_list.each do |c| %>
+          <li> <%= c['name'].html_safe %> </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-1"></div>
   </div>
 </div>
