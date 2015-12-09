@@ -61,16 +61,14 @@ function showCurrentPosition(position) {
    map = new google.maps.Map(document.getElementById("geolocation"),mapProp);
    
    var marker = new google.maps.Marker({
-      
-      position:myLoc,
-      animation:google.maps.Animation.BOUNCE
-      
+      position: myLoc,
+      // animation:google.maps.Animation.BOUNCE
    });
    
+   marker.setIcon('http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=|0099FF')
+   
    var infowindow = new google.maps.InfoWindow({
-    
-    content:"You're here"
-      
+    content:"You are here"
    });
   
   google.maps.event.addListener(marker, 'click', function() {
@@ -207,7 +205,7 @@ function displayEventsList(tempEvent){
       
       var eventDivString = '<div class = "thumbnail"> <img src =" ' + 
                            imgUrl + '" alt = "Event Image"> <div class = "caption"> <h4>' + 
-                           eventTitle + '</h3> <div><b> Start Time: </b>' + 
+                           eventTitle + '</h4> <div><b> Start Time: </b>' + 
                            startTime + '<br/><b>End Time: </b>' + 
                            stopTime +'<br/><b>Location: </b>' + 
                            address + '</div></div><div class="event-buttons">' +
