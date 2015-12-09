@@ -1,5 +1,4 @@
-<% provide(:title, full_name(@user)) %>
-<div class="alert alert-info" role="alert"><b>Welcome! <%= full_name(@user) %></b>, here are few places you might wanna check out</div>
+<div class="alert alert-info" role="alert"><strong>Welcome, <%= @user.first_name %></strong>! Here are a few places you might want to check out.</div>
 <div class="row">
    <div id = "eventlist" class="col-sm-4">
       
@@ -211,9 +210,9 @@ function displayEventsList(tempEvent){
                            eventTitle + '</h3> <div><b> Start Time: </b>' + 
                            startTime + '<br/><b>End Time: </b>' + 
                            stopTime +'<br/><b>Location: </b>' + 
-                           address + '</div></div></div><p>' +
+                           address + '</div></div><div class="event-buttons">' +
                                      '<a href="'+ eventInfoUrl +'" target="_blank" class="btn btn-primary" role="button">View Details</a>' +  
-                                     '<a href="#" class="btn btn-default" role="button" onclick="shareOnFb()">RSVP Going</a></p>';
+                                     '<a href="#" class="btn btn-default" role="button" onclick="shareOnFb()">RSVP Going</a></div></div>';
       
       eventsPannel.innerHTML = eventsPannel.innerHTML + eventDivString;
 } //End function
