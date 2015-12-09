@@ -9,11 +9,17 @@
     <div class="col-md-4"><%= event_image_generated %></div>
     <div class="col-md-1"></div>
     <div class="col-md-4">
-      <span class="event-info"><%= @event_date %></span>
-      <span class="event-info"><%= @event_time %></span>
-      <span class="event-info"><%= link_to @event['venue_name'], "/venues/" + @event['venue_id'], :target => '_blank' %></span>
-      <span class="event-info"><%= @event['address'] %></span>
-      <span class="event-info"><%= @event['city'] + ", " + @event['region_abbr'] + "  " + @event['postal_code'].to_s %></span>
+      <div class="event-date">
+        <%= @event_date %> | <%= @event_time %>
+      </div>
+      <div class="event-venue">
+        <%= link_to @event['venue_name'], "/venues/" + @event['venue_id'], :target => '_blank' %>
+      </div>
+      <div class="event-address">
+        <%= @event['address'] %><br/>
+        <%= @event['city'] + ", " + @event['region_abbr'] %><br/>
+        <%= @event['postal_code'].to_s %>
+      </div>
     </div>
     <div class="col-md-2"></div>
   </div>
