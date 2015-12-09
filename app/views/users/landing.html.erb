@@ -171,6 +171,7 @@ function displayEventsList(tempEvent){
    var address = "Venue address not available";
    var eventID = tempEvent.id;
    var eventInfoUrl = "/events/" + eventID;
+   var eventInfoEventful = tempEvent.url
    var imgUrl = "http://lakecitycc.org/wp-content/uploads/2015/01/upcomingevents.jpg";
    
       if(tempEvent.description != null){
@@ -201,21 +202,18 @@ function displayEventsList(tempEvent){
          }
       }
       
+      var share_image = '<%= image_tag('facebook-share-button.png', size: "150x60", align: "right") %>';
       var eventDivString = '<div class = "thumbnail"> <img src =" ' + 
                            imgUrl + '" alt = "Event Image"> <div class = "caption"> <h4>' + 
                            eventTitle + '</h4> <div><b> Start Time: </b>' + 
                            startTime + '<br/><b>End Time: </b>' + 
                            stopTime +'<br/><b>Location: </b>' + 
-                           address + '</div></div><div class="event-buttons">' +
-                                     '<a href="'+ eventInfoUrl +'" target="_blank" class="btn btn-primary" role="button">View Details</a>' +  
-                                     '<a href="#" class="btn btn-default" role="button" onclick="shareOnFb()">RSVP Going</a></div></div>';
+                           address + '</div></div><div class="event-buttons"> <a href="'+
+                           eventInfoUrl +'" align="left" target="_blank" class="btn btn-primary" role="button">View Details</a><a href="http://www.facebook.com/sharer.php?u='+
+                           eventInfoEventful +'">'+ share_image +'</a></div></div>';
       
       eventsPannel.innerHTML = eventsPannel.innerHTML + eventDivString;
 } //End function
-
-function shareOnFb(){
-   alert("Niharika will integrate this!");
-}
 
 // This function is to clear all the markers
 function clearMarkers(){
