@@ -1,9 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "iLike", root_path, id: "logo" %>
+  <div class="container" data-no-turbolink>
+    <%= link_to "iLike", root_path, id: "logo", method: :get %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",    root_path %></li>
+        <li><%= link_to "Home",    root_path, method: :get %></li>
         <li><%= link_to "About",   about_path %></li>
         <% if logged_in? %>
           <li class="dropdown">
