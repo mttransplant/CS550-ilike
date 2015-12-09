@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   constraints lambda { |req| !req.session[:user_id].blank? } do
     root :to => "users#landing", :as => "dashboard"
   end
+  
   # Not logged in
   root                 'static_pages#home'
   
