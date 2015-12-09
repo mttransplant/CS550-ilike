@@ -19,7 +19,21 @@
   </div>
   <hr/>
   <div class="row">
-    <p>Description: <%= @event_description.html_safe %></p>
-    <p>Price: <%= @event['price'] %></p>
+    <p><strong>Categories:</strong></p>
+    <% category_list = @event['categories']['category'] %>
+    <ul>
+      <% if category_list == nil then %>
+        <li>This event is not categorized</li>
+      <% else %>
+        <% category_list.each do |c| %>
+        <li> <%= c['name'].html_safe %> </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <hr/>
+  <div class="row">
+    <p><strong>Description:</strong> <%= @event_description.html_safe %></p>
+    <p><strong>Price:</strong> <%= @event['price'] %></p>
   </div>
 </div>
