@@ -1,38 +1,56 @@
 <% provide(:title, @venue['name']) %>
-<h1><%= @venue['name'] %></h1>
 
-<ul>
-  <li><strong>Address:</strong> <%= @venue['address'] %></li>
-  <li><strong>City:</strong> <%= @venue['city'] %>, <%= @venue['region_abbr'] %></li>
-  <li><strong>ZIP Code:</strong> <%= @venue['postal_code'] %></li>
-  <li><strong>Description:</strong> <%= @venue['description'].html_safe unless @venue['description'] == nil %></li>
-</ul>
 
-<div style='width: 800px; margin-left: auto; margin-right: auto; margin-top: 50px;'>
-  <div id="one_marker" style='width: 800px; height: 400px;'></div>
+<div class="well">
+  <div class="row event-div">
+    <h1><%= @venue['name'] %></h1>
+  </div>
+  <div class = "row event-div">
+    <div class="event-address">
+      <strong>Address:</strong> <%= @venue['address'] %><br/>
+      <strong>City:</strong> <%= @venue['city'] %>, <%= @venue['region_abbr'] %><br/>
+    </div>
+  </div>
+  <div class = "row event-div">
+    <strong>Description:</strong> 
+    <% if @venue['description'] == nil then %>
+      This event has no description.
+    <% else %>
+      <%= @venue['description'].html_safe %>
+    <% end %>
+  </div>
+  <div class = "row event-div">
+    <div style='width: 800px; margin-left: auto; margin-right: auto; margin-top: 50px;'>
+      <div id="one_marker" style='width: 800px; height: 400px;'>
+        
+      </div>
+    </div>
+    <script type="text/javascript">
+    
+      var lat = <%= @venue['latitude'] %>
+      var lng = <%= @venue['longitude'] %>
+      var myLoc = new google.maps.LatLng(lat,lng);
+   
+      mapProp = {
+        center:myLoc,
+        zoom:12,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+  
+      var marker = new google.maps.Marker({
+      
+        position:myLoc,
+      
+      });
+      var map = new google.maps.Map(document.getElementById("one_marker"),mapProp);
+  
+      marker.setMap(map);
+  
+    </script>
+  </div>
 </div>
 
 
-<script type="text/javascript">
-    
-   var lat = <%= @venue['latitude'] %>
-   var lng = <%= @venue['longitude'] %>
-   var myLoc = new google.maps.LatLng(lat,lng);
-   
-  mapProp = {
-    center:myLoc,
-    zoom:12,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-    
-  };
-  
-  var marker = new google.maps.Marker({
-      
-      position:myLoc,
-      
-  });
-  var map = new google.maps.Map(document.getElementById("one_marker"),mapProp);
-  
-  marker.setMap(map);
-  
-</script>
+
+
+
