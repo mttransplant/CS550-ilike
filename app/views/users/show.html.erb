@@ -1,24 +1,30 @@
 <% provide(:title, full_name(@user)) %>
- <%= gravatar_for @user %>
 
- <div>
- <h3>My Preferences</h3>
- <div>
-<ul>
-<% @user.categories.each do |pref| %>
-  <li><%= pref.name %></li>
-<% end %>
-</ul>
+<div id="user-profile-info" class="well">
+  <div class="row">
+    <div class="col-md-4"></div>
+     <div class="col-md-4">
+       <h1 style="text-align: center;"><%= full_name(@user) %></h1>
+     </div>
+     <div class="col-md-4"></div>
+  </div>
+  <div class="row" style="margin-bottom: 2em;">
+    <div class="col-md-4"></div>
+     <div class="col-md-4" style="text-align: center;">
+       <%= gravatar_for @user %>  
+     </div>
+     <div class="col-md-4"></div>
+  </div>
+  <div class="row" style="clear: both;">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <h3>Preferred Categories</h3>
+      <ul>
+        <% @user.categories.each do |pref| %>
+          <li><%= pref.name %></li>
+        <% end %>
+        </ul>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
 </div>
-</div>
-  
-<!--<div class="row">
-  <aside class="col-md-4">
-    <section class="user-info">
-      <h1>
-     
-        
-      </h1>      
-    </section>
-  </aside>
-</div> -->
