@@ -34,8 +34,12 @@
     <div class="col-md-10">
       <p>
         <strong>Price:</strong>
-        <% if @event['free'] %>
+        
+        <% case @event['price'] %>
+        <% when 'free' %>
           Free
+        <% when nil %>
+          Unknown
         <% else %>
           $<%= @event['price'] %>
         <% end %>

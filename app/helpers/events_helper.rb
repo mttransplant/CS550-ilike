@@ -6,14 +6,15 @@ module EventsHelper
     #event_url = "http://dummyimage.com/200x200/000/fff.png&text=#{params[:id]}"
     default_image_url = "http://lakecitycc.org/wp-content/uploads/2015/01/upcomingevents.jpg"
     image_url = default_image_url
-    event_images = @event['images']['image']
+    event_images = @event['images']['image'] unless @event['images'] == nil
     if event_images != nil
       large_images = event_images.select { |i| i['large'] != nil }
       medium_images = event_images.select { |i| i['medium'] != nil }
       small_images = event_images.select { |i| i['small'] != nil }
     end
     
-    if large_images.count > 0 && image_url == default_image_url then
+    
+    if large_images != nil && large_images.count > 0 && image_url == default_image_url then
       if large_images.count == 1 then
         image_url = large_images['large']['url']
       else
@@ -21,7 +22,7 @@ module EventsHelper
       end
     end
     
-    if medium_images.count > 0 && image_url == default_image_url then
+    if medium_images != nil && medium_images.count > 0 && image_url == default_image_url then
       if medium_images.count == 1 then
         image_url = medium_images['medium']['url']
       else
@@ -30,7 +31,7 @@ module EventsHelper
     end
     
     
-    if small_images.count > 0 && image_url == default_image_url then
+    if small_images != nil && small_images.count > 0 && image_url == default_image_url then
       if small_images.count == 1 then
         image_url = small_images['small']['url']
       else
