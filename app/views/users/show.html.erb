@@ -1,5 +1,17 @@
 <% provide(:title, full_name(@user)) %>
  <%= gravatar_for @user %>
+
+ <div>
+ <h3>My Preferences</h3>
+ <div>
+<ul>
+<% @user.categories.each do |pref| %>
+  <li><%= pref.name %></li>
+<% end %>
+</ul>
+</div>
+</div>
+  
 <!--<div class="row">
   <aside class="col-md-4">
     <section class="user-info">
